@@ -1,0 +1,34 @@
+.albumPictureStyle {
+  width: 150px;
+  height: 150px;
+}
+.pages {
+  margin: 20px;
+}
+.page {
+  margin: 20px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.currentPage {
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.imageGridStyle {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
+}
+.albumStyle {
+  margin: 10px;
+  height: 300px;
+  width: 300px;
+}
