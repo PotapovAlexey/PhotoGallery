@@ -1,7 +1,13 @@
-.albumPictureStyle {
+.mainPageWrapper {
+  text-align: center;
+}
+.searchContainer {
+  margin-top: 5em;
+}
+/* .albumPictureStyle {
   width: 150px;
   height: 150px;
-}
+} */
 .pages {
   margin: 20px;
 }
@@ -22,13 +28,10 @@
 }
 .imageGridStyle {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 
   justify-content: center;
 }
 .albumStyle {
   margin: 10px;
-  height: 300px;
-  width: 300px;
 }

@@ -1,0 +1,9 @@
+.headerContainer {
+  background-color: grey;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+.headerTitle {
+  margin: 0;
+}

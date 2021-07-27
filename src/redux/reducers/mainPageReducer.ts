@@ -1,10 +1,10 @@
 
 import {Dispatch} from "redux";
 import {AppStateType} from '../redux-store';
-import {InitialMainPageReducerStateType,ActionsTypes,setAlbumsDataACType,setCurrentPageACType,setFilteredAlbumsAcType,albumsType} from '../reducers/mainPageReducerTypes'
+import {InitialMainPageReducerStateType,ActionsTypes} from '../reducers/mainPageReducerTypes'
 import axios from 'axios'
-import {SET_ALBUMS_DATA,SET_CURRENT_PAGE,SET_FILTERED_ALBUMS} from './mainPageReducerTypes'
-
+import {SET_ALBUMS_DATA,SET_CURRENT_PAGE} from './mainPageReducerTypes'
+import {setAlbumsData,setCurrentPageAC} from '../actions/actions'
 
 let initialState: InitialMainPageReducerStateType =  {
       
@@ -15,16 +15,13 @@ let initialState: InitialMainPageReducerStateType =  {
     title: '',
     url:'',
     thumbnailUrl: '',
-    
          }
          ],
-    pageSize: 50,
-    totalCount: 0,
+    pageSize: 4,
+    totalCount: 50,
     currentPage: 1,
-    }
-
-
-
+    albumID:1
+        }
 
 const mainPageReducer = (state: InitialMainPageReducerStateType = initialState, action: ActionsTypes) => {
 
@@ -33,12 +30,6 @@ const mainPageReducer = (state: InitialMainPageReducerStateType = initialState, 
             return {...state, albums: action.data }
         case SET_CURRENT_PAGE:
             return {...state, currentPage: action.currentPage}
-        case SET_FILTERED_ALBUMS:
-            return {
-                    ...state,albums:[...state.albums.filter((album:albumsType)=> {
-                        return album.title.toLowerCase().trim().indexOf(action.title.toLowerCase().trim())>= 0
-                    
-                    } )] }
         default :
             return state
 
@@ -46,27 +37,23 @@ const mainPageReducer = (state: InitialMainPageReducerStateType = initialState, 
 
 }
 
-export const setAlbumsData = (data:InitialMainPageReducerStateType): setAlbumsDataACType => ({type: SET_ALBUMS_DATA, data})
-export const setCurrentPageAC = (currentPage: number): setCurrentPageACType => ({type: SET_CURRENT_PAGE, currentPage})
-export const setFilteredAlbumsAC = (title:string): setFilteredAlbumsAcType => ({type: SET_FILTERED_ALBUMS, title})
-
-
-
-
-export const getAlbumsDataThunk = (currentPage: number, pageSize: number) => {
-   
-    return (dispatch: Dispatch<ActionsTypes>, getState: AppStateType) => {
-      
-      axios.get(`https://jsonplaceholder.typicode.com/photos?_page=${currentPage}&_limit=${pageSize}`).then(response => {
+////////////////Thunk
+export const getAlbumsDataThunk = (currentPage: number, pageSize: number,albumId:number) => {
+    return (dispatch: Dispatch<ActionsTypes>, getState: AppStateType) => { 
+      axios.get(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos?_page=${currentPage}&_limit=${pageSize}`).then(response => {
             dispatch(setAlbumsData(response.data))
-            dispatch(setCurrentPageAC(currentPage))
-           
-           
-})
-            .catch(error => console.log('ERROR',error));
-
+            dispatch(setCurrentPageAC(currentPage)) 
+            console.log('albumId',albumId);
+            
+            console.log('RES',response.data);
+            
+}).catch(error => console.log('ERROR',error));
     }
 }
+/////////////
+
+
+
 
 export default mainPageReducer
 
