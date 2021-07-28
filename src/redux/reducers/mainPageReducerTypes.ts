@@ -13,13 +13,13 @@ export type albumsType = {
 }
 
 export type InitialMainPageReducerStateType ={
- albums: any,
+ albums:any              //   doesn't work  Array<albumsType>,
  pageSize: number,
   totalCount: number,
   currentPage: number,
   albumID:number
 }
-  
+
 
 export type ActionsTypes =setAlbumsDataACType|setCurrentPageACType|setFilteredAlbumsAcType|setAlbumsIdAcType
  
