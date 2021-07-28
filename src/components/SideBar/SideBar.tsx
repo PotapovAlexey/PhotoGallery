@@ -47,36 +47,3 @@ const SideBar = () => {
 };
 
 export default SideBar;
-
-{
-  /* <div className="container">
-  <div className="row">
-    <div className="col-sm">
-      <h1>Search</h1>
-    </div>
-  </div>
-  <div className="row">
-    <div className="col-sm">
-      {" "}
-      <p>Add album ID</p>
-    </div>
-  </div>
-  <div className="row">
-    <div className="col-sm">
-      {" "}
-      <input
-        placeholder="add album id"
-        onChange={searchHandler}
-        type="number"
-      ></input>
-    </div>
-  </div>
-  <div className="row">
-    <div className="col-sm">
-      {" "}
-      <button onClick={() => onButtonPress(value)}>Search</button>
-    </div>
-  </div>
-  //{" "}
-</div>; */
-}

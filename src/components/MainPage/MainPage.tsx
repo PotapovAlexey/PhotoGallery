@@ -60,28 +60,6 @@ const MainPage = (props: PropsType) => {
   };
   return (
     <div className={styles.mainPageWrapper}>
-      {/* <div className={styles.searchContainer}>
-        <input placeholder="add album name" onChange={searchHandler}></input>
-        <button onClick={() => onButtonPress(value)}>Search</button>
-      </div>
-
-      <div className={styles.pages}>
-        {pages.slice(firstPages.start, firstPages.end).map((page) => (
-          <span
-            key={page}
-            className={
-              props.mainPageData.currentPage === page
-                ? styles.currentPage
-                : styles.page
-            }
-            onClick={() => {
-              setNewPage(page);
-            }}
-          >
-            {page}
-          </span>
-        ))}
-      </div> */}
       <div className="container">
         <div className="row">
           <div className="col-4" />
@@ -127,18 +105,6 @@ const MainPage = (props: PropsType) => {
         </div>
       </div>
 
-      {/* <div className={styles.imageGridStyle}>
-        {filteredAlbums.length > 0
-          ? filteredAlbums.map((album: albumsType) => (
-              <div key={album.id} className={styles.albumStyle}>
-                <div>
-                  <img src={album.url} alt={album.title} />
-                  <span>
-                    <p>{album.title}</p>
-                  </span>
-                </div>
-              </div> */}
-
       <div className="container">
         <div className="row">
           {filteredAlbums.length > 0
@@ -169,40 +135,3 @@ const MainPage = (props: PropsType) => {
 };
 
 export default MainPage;
-
-// <div className="container">
-//{filteredAlbums.length > 0
-//? filteredAlbums.map((album: albumsType) => (
-//   <div className="row">
-//     <div className="col-6" key={album.id}><img src={album.url} alt={album.title}
-// <p>{album.title}</p>
-//</div>
-
-//   </div>
-// </div>;
-
-// <div className="container">
-//   <div className="row">
-//     <div className="col-sm">O <input placeholder="add album name" onChange={searchHandler}></input>
-//       <button onClick={() => onButtonPress(value)}>Search</button></div>
-//   </div>
-//   <div className="row">
-//     <div className="col-sm"> <div className={styles.pages}>
-//   {pages.slice(firstPages.start, firstPages.end).map((page) => (
-//     <span
-//       key={page}
-//       className={
-//         props.mainPageData.currentPage === page
-//           ? styles.currentPage
-//           : styles.page
-//       }
-//       onClick={() => {
-//         setNewPage(page);
-//       }}
-//     >
-//       {page}
-//     </span>
-//   ))}
-// </div></div>
-//   </div>
-// </div>;
