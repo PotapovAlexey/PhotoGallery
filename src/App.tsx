@@ -7,19 +7,19 @@ import { store } from "./redux/redux-store";
 import "bootstrap/dist/css/bootstrap.css";
 function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <div className="container">
+    <div className="appWrapper">
+      <div className=".container-fluid">
+        <Provider store={store}>
           <div className="row">
-            <div className="w-25 p-3">
+            <div className="col-2">
               <SideBar />
             </div>
-            <div className="w-75 p-3">
+            <div className="col-10">
               <MainPageContainer />
             </div>
           </div>
-        </div>
-      </Provider>
+        </Provider>
+      </div>
     </div>
   );
 }

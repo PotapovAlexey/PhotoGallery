@@ -29,14 +29,14 @@ const MainPageContainer = () => {
     );
   };
   return (
-    <div className="container">
+    <div className=".container-fluid">
       <div className="row">
-        <div className="col-sm">
+        <div className="col">
           <Header />
         </div>
       </div>
       <div className="row">
-        <div className="col-sm">
+        <div className="col-12">
           <MainPage mainPageData={mainPageData} onPageChange={onPageChange} />
         </div>
       </div>
