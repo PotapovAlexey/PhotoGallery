@@ -44,7 +44,7 @@ const MainPage = (props: PropsType) => {
     props.onPageChange(page);
   };
   const [value, setValue] = useState("");
-  const [filteredAlbums, setFilteredAlbums] = useState([]);
+  const [filteredAlbums, setFilteredAlbums] = useState<albumsType[]>([]);
   const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     let title = e.currentTarget.value;
     setValue(title);
@@ -134,4 +134,4 @@ const MainPage = (props: PropsType) => {
   );
 };
 
-export default MainPage;
+export default React.memo(MainPage);

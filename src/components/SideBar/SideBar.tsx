@@ -3,10 +3,13 @@ import styles from "./SideBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStateType } from "../../redux/redux-store";
 import { getAlbumsDataThunk } from "../../redux/reducers/mainPageReducer";
+import { InitialMainPageReducerStateType } from "../../redux/reducers/mainPageReducerTypes";
 
 const SideBar = () => {
   const dispatch = useDispatch();
-  const mainPageData = useSelector((state: AppStateType) => state.mainPage);
+  const mainPageData = useSelector(
+    (state: AppStateType): InitialMainPageReducerStateType => state.mainPage
+  );
   const [value, setValue] = useState(0);
 
   const searchHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

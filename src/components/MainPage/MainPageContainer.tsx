@@ -4,10 +4,13 @@ import { AppStateType } from "../../redux/redux-store";
 import { getAlbumsDataThunk } from "../../redux/reducers/mainPageReducer";
 import MainPage from "./MainPage";
 import Header from "../Header/Header";
+import { InitialMainPageReducerStateType } from "../../redux/reducers/mainPageReducerTypes";
 
 const MainPageContainer = () => {
   const dispatch = useDispatch();
-  const mainPageData = useSelector((state: AppStateType) => state.mainPage);
+  const mainPageData = useSelector(
+    (state: AppStateType): InitialMainPageReducerStateType => state.mainPage
+  );
 
   useEffect(() => {
     dispatch(

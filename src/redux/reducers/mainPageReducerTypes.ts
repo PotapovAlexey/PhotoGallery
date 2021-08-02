@@ -13,7 +13,7 @@ export type albumsType = {
 }
 
 export type InitialMainPageReducerStateType ={
- albums:any              //   doesn't work  Array<albumsType>,
+ albums:  Array<albumsType>,             //   doesn't work  Array<albumsType>,
  pageSize: number,
   totalCount: number,
   currentPage: number,

@@ -23,7 +23,7 @@ let initialState: InitialMainPageReducerStateType =  {
     albumID:1
         }
 
-const mainPageReducer = (state: InitialMainPageReducerStateType = initialState, action: ActionsTypes) => {
+const mainPageReducer = (state = initialState, action: ActionsTypes) => {
 
     switch (action.type) {
         case SET_ALBUMS_DATA:
